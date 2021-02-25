@@ -4,6 +4,7 @@ from .models import Category, Dish, Events, Banner
 
 def main(request):
     banners=Banner.objects.filter(is_visible=True)
+
     special_categories = Category.objects.filter(is_visible=True).filter(is_special=True).order_by('category_order')
     for item in special_categories:
         item.dishes = Dish.objects.filter(category=item.pk)

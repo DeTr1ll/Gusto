@@ -16,7 +16,7 @@ class Dish(models.Model):
 
     def get_file_name_dishes(self, filename):
         ext = filename.split('.')[-1]
-        filename = f'(uuid()).(ext)'
+        filename = f'{uuid4()}.{ext}'
         return os.path.join('images/dishes', filename)
     title = models.CharField(max_length=50)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
@@ -33,7 +33,7 @@ class Dish(models.Model):
 class Events(models.Model):
     def get_file_name_events(self, filename):
         ext = filename.split('.')[-1]
-        filename = f'(uuid()).(ext)'
+        filename = f'{uuid4()}.{ext}'
         return os.path.join('images/events', filename)
     title = models.CharField(max_length=50)
     photo = models.ImageField(upload_to=get_file_name_events)
@@ -48,7 +48,7 @@ class Events(models.Model):
 class Banner(models.Model):
     def get_file_name_banners(self, filename):
         ext = filename.split('.')[-1]
-        filename = f'(uuid()).(ext)'
+        filename = f'{uuid4()}.{ext}'
         return os.path.join('images/banners', filename)
 
     title = models.CharField(max_length=50)

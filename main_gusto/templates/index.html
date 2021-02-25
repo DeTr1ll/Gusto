@@ -2,15 +2,31 @@
 
 
 {% block content %}
+
+    <section>
+
+        <div class="sl_ctr">
+
+                <div class="sldr">
+                    {% for item in banners %}
+
+                            <img src="{{ item.photo.url }}" title="{{ item.title }}" width="1920" height="1080"></img>
+
+                    {% endfor %}
+                </div>
+
+
+            <div class="prv_b"></div>
+            <div class="nxt_b"></div>
+
+        </div>
+
+    </section>
+
     <section>
         <div class="container">
             <div class="row">
-                {% for item in banners %}
-                    <div class="col-xs-12 col-sm-6">
-                        <h2>{{ item.title }}</h2>
-                         <div><img src="{{ dish.photo.url }}"></img></div>
-                    </div>
-                {% endfor %}
+
 
             </div>
         </div>
