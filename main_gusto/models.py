@@ -17,15 +17,43 @@ class Dish(models.Model):
     def get_file_name_dishes(self, filename):
         ext = filename.split('.')[-1]
         filename = f'(uuid()).(ext)'
-        return os.path.join('images/dishes')
+        return os.path.join('images/dishes', filename)
     title = models.CharField(max_length=50)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     description = models.CharField(max_length=300)
     price = models.DecimalField(max_digits=7, decimal_places=2)
     photo = models.ImageField(upload_to=get_file_name_dishes)
-    is_visible = models.BooleanField()
+    is_visible = models.BooleanField(default=True)
 
 
 
     def __str__(self):
         return f'{self.title} : {self.category}'
+
+class Events(models.Model):
+    def get_file_name_events(self, filename):
+        ext = filename.split('.')[-1]
+        filename = f'(uuid()).(ext)'
+        return os.path.join('images/events', filename)
+    title = models.CharField(max_length=50)
+    photo = models.ImageField(upload_to=get_file_name_events)
+    description = models.TextField(null=True)
+    event_date = models.DateField()
+    event_time = models.TimeField()
+    price = models.DecimalField(max_digits=7, decimal_places=2)
+
+    def __str__(self):
+        return f'{self.title} : {self.event_date}'
+
+class Banner(models.Model):
+    def get_file_name_banners(self, filename):
+        ext = filename.split('.')[-1]
+        filename = f'(uuid()).(ext)'
+        return os.path.join('images/banners', filename)
+
+    title = models.CharField(max_length=50)
+    photo = models.ImageField(upload_to=get_file_name_banners)
+    is_visible = models.BooleanField(default=True)
+
+    def __str__(self):
+        return f'{self.title}'
