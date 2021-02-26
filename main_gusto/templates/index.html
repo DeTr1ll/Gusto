@@ -6,13 +6,17 @@
     <section>
 
                 <div class="slider">
-                    <ul class="slides">
-                        {% for item in banners %}
-                            <figure>
-                                <li class="slide"><img src="{{ item.photo.url }}" title="{{ item.title }}"></img></li>
-                            </figure>
-                        {% endfor %}
-                    </ul>
+                    <div class="slider__wrapper">
+                        <div class="slider__items">
+                            {% for item in banners %}
+                                <div class="slider__item">
+                                    <img src="{{ item.photo.url }}" title="{{ item.title }}" height="400px" width="1350px"></img>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <a class="slider__control slider__control_prev" href="#" role="button"></a>
+                    <a class="slider__control slider__control_next" href="#" role="button"></a>
                 </div>
 
     </section>
