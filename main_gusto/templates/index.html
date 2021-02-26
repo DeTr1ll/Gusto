@@ -8,9 +8,9 @@
                 <div class="slider">
                     <ul class="slides">
                         {% for item in banners %}
-
-                            <li class="slide"><img src="{{ item.photo.url }}" title="{{ item.title }}"></img></li>
-
+                            <figure>
+                                <li class="slide"><img src="{{ item.photo.url }}" title="{{ item.title }}"></img></li>
+                            </figure>
                         {% endfor %}
                     </ul>
                 </div>
