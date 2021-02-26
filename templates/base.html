@@ -4,13 +4,11 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <script type="text/javascript" src="../static/scripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../static/scripts/jquery.glide.min.js"></script>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <link href="/static/css/style.css" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-
-
+    <link rel="stylesheet" type="text/css"  href="../static/css/style.css">
     <title>Gusto</title>
   </head>
   <body>
@@ -44,7 +42,16 @@
         Trubnikov Illya Kyiv 2020
     </footer>
     <!-- Optional JavaScript; choose one of the two! -->
-
+    <script type="text/javascript">
+        $(function(){
+            $('.slider').glide({
+            autoplay: 3500,
+            hoverpause: true, // set to false for nonstop rotate
+            arrowRightText: '&rarr;',
+            arrowLeftText: '&larr;'
+            });
+        });
+    </script>
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 
@@ -54,5 +61,5 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
     -->
   </body>
-    <script src="/static/scripts/slider.js"></script>
+
 </html>

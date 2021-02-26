@@ -5,21 +5,15 @@
 
     <section>
 
-        <div class="sl_ctr">
+                <div class="slider">
+                    <ul class="slides">
+                        {% for item in banners %}
 
-                <div class="sldr">
-                    {% for item in banners %}
+                            <li class="slide"><img src="{{ item.photo.url }}" title="{{ item.title }}"></img></li>
 
-                            <img src="{{ item.photo.url }}" title="{{ item.title }}" width="1920" height="1080"></img>
-
-                    {% endfor %}
+                        {% endfor %}
+                    </ul>
                 </div>
-
-
-            <div class="prv_b"></div>
-            <div class="nxt_b"></div>
-
-        </div>
 
     </section>
 
