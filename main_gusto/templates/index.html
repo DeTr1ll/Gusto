@@ -41,7 +41,7 @@
 
                                 <div class="card-body">
                                     <img class="card-img-left" src="{{ dish.photo.url }}"></img>
-                                   <h3 class="card-title">{{ dish.title }}</h3>
+                                    <a href="/menu/{{ dish.pk }}" style="text-decoration: none;"><h3 class="card-title">{{ dish.title }}</h3></a>
                                     <p class="card-desc">{{ dish.description }}</p>
                                     <span class="card-price">{{ dish.price }} &#8372</span>
                                 </div>
@@ -64,7 +64,7 @@
                              <div class="card bg-secondary">
                              <div class="card-body">
                                     <img class="card-img-left" src="{{ dish.photo.url }}"></img>
-                                    <h3 class="card-title">{{ dish.title }}</h3>
+                                    <a href="/menu/{{ dish.pk }}" style="text-decoration: none;"><h3 class="card-title">{{ dish.title }}</h3></a>
                                     <p class="card-desc">{{ dish.description }}</p>
                                     <span class="card-price">{{ dish.price }} &#8372</span>
                              </div>
@@ -93,7 +93,7 @@
                             </span>
                             <span class="slider__events__item_testimonial">
                                 <span class="slider__events__item_name">{{ item.title }}</span>
-                                <span class="slider__events__item_post">{{ item.event_date }} {{ item.event_time }}</span>
+                                <span class="slider__events__item_post">{{ item.event_date|date:"d.m"|lower}} {{ item.event_time|time:"H:i"| lower}}</span>
                                 <span class="slider__events__item_text">{{ item.description }}</span>
                                 <span class="slider__events__item_action">
                                     <a class="btn__events" href="#">Купить за {{ item.price }} &#8372</a>

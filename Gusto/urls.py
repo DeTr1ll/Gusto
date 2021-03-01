@@ -20,7 +20,8 @@ from Gusto import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('main_gusto.urls'))
+    path('', include('main_gusto.urls')),
+    path('menu/', include('menu_gusto.urls'))
 ]
 
 if settings.DEBUG:

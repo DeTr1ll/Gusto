@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="card bg-secondary">
+        <div class="card-body">
+            <img class="card-img-left" src="{{ dish.photo.url }}"></img>
+            <h3 class="card-title">{{ dish.title }}</h3>
+            <p class="card-desc">{{ dish.description }}</p>
+            <span class="card-price">{{ dish.price }} &#8372</span>
+        </div>
+    </div>
+
+{% endblock %}

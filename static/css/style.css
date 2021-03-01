@@ -361,6 +361,13 @@
         color: white;
 
     }
+    .card-title:hover{
+
+        font-size: 40px;
+        color: lightblue;
+
+
+    }
     .card-desc{
 
         height: 100%;
