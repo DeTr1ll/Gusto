@@ -3,7 +3,7 @@
 
 {% block content %}
 
-    <section>
+    <section id="banners">
 
                 <div class="slider">
                     <div class="slider__wrapper">
@@ -34,14 +34,17 @@
         <div class="container">
             <div class="row">
                 {% for item in special_categories %}
-                    <div class="col-xs-12 col-sm-6">
+                    <div style="width: 100%">
                         <h2>{{ item.title }}</h2>
                          {% for dish in item.dishes %}
-                             <div>
-                                <div><h3>{{ dish.title }}</h3></div>
-                                <div><p>{{ dish.description }}</p></div>
-                                <div><p>{{ dish.price }} &#8372</p></div>
-                                <div><img src="{{ dish.photo.url }}"></img></div>
+                             <div  class="card bg-secondary">
+
+                                <div class="card-body">
+                                    <img class="card-img-left" src="{{ dish.photo.url }}"></img>
+                                   <h3 class="card-title">{{ dish.title }}</h3>
+                                    <p class="card-desc">{{ dish.description }}</p>
+                                    <span class="card-price">{{ dish.price }} &#8372</span>
+                                </div>
                              </div>
                          {% endfor %}
                     </div>
@@ -55,14 +58,16 @@
         <div class="container">
             <div class="row">
                 {% for item in categories %}
-                    <div class="col-xs-12 col-sm-6">
+                    <div style="width: 100%">
                         <h2>{{ item.title }}</h2>
                          {% for dish in item.dishes %}
-                             <div>
-                                <div><h3>{{ dish.title }}</h3></div>
-                                <div><p>{{ dish.description }}</p></div>
-                                <div><p>{{ dish.price }} &#8372</p></div>
-                                <div><img src="{{ dish.photo.url }}"></img></div>
+                             <div class="card bg-secondary">
+                             <div class="card-body">
+                                    <img class="card-img-left" src="{{ dish.photo.url }}"></img>
+                                    <h3 class="card-title">{{ dish.title }}</h3>
+                                    <p class="card-desc">{{ dish.description }}</p>
+                                    <span class="card-price">{{ dish.price }} &#8372</span>
+                             </div>
                              </div>
                          {% endfor %}
                     </div>
@@ -73,20 +78,34 @@
     </section>
     <section id="events">
         <h1>События</h1>
-        <div class="container">
-            <div class="row">
+          <div class="slider__events">
+            <div class="slider__events__wrapper">
+                <div class="slider__events__items">
                 {% for item in events %}
-                    <div class="col-xs-12 col-sm-6">
-                        <h2>{{ item.title }}</h2>
-                        <p>{{ item.description }}</p>
-                        <p>{{ item.event_date }}</p>
-                        <p>{{ item.event_time }}</p>
-                        <p>{{ item.price }} &#8372</p>
-                        <img src="{{ item.photo.url }}"></img>
-                    </div>
+                   <div class="slider__events__item">
+                        <span class="slider__events__item_inner">
+                            <span class="slider__events__item_img">
+                                <img class="slider__events__item_img" src="{{ item.photo.url }}" alt=""></img>
+                            </span>
+                            <span class="slider__events__item_testimonial">
+                                <span class="slider__events__item_name">{{ item.title }}</span>
+                                <span class="slider__events__item_post">{{ item.event_date }} {{ item.event_time }}</span>
+                                <span class="slider__events__item_text">{{ item.description }}</span>
+                                <span class="slider__events__item_action">
+                                    <a class="btn__events" href="#">Купить за {{ item.price }} &#8372</a>
+                                </span>
+                            </span>
+                        </span>
+
+                   </div>
+
                 {% endfor %}
 
+                </div>
+
             </div>
-        </div>
+                <a class="slider__events__control slider__events__control_prev" href="#" role="button"></a>
+                <a class="slider__events__control slider__events__control_next" href="#" role="button"></a>
+          </div>
     </section>
 {% endblock %}

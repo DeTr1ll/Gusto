@@ -20,7 +20,7 @@ class Dish(models.Model):
         return os.path.join('images/dishes', filename)
     title = models.CharField(max_length=50)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
-    description = models.CharField(max_length=300)
+    description = models.CharField(max_length=600)
     price = models.DecimalField(max_digits=7, decimal_places=2)
     photo = models.ImageField(upload_to=get_file_name_dishes)
     is_visible = models.BooleanField(default=True)

@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script type="text/javascript" src="../static/scripts/slider.js"></script>
-
+    <script type="text/javascript" src="../static/scripts/slider_events.js"></script>
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
@@ -14,9 +14,9 @@
     <link rel="stylesheet" type="text/css"  href="../static/css/style.css">
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="/#navbar">Gusto</a>
+            <a class="navbar-brand" href="/#banners">Gusto</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -40,8 +40,12 @@
     {% block content %}
     {% endblock %}
 
-    <footer >
-        Trubnikov Illya Kyiv 2020
+    <footer class="bg-dark">
+        <div>
+            <p style="color: white; text-align: center">Trubnikov Illya<br>
+                Kyiv<br>
+                2021</p>
+        </div>
     </footer>
     <!-- Optional JavaScript; choose one of the two! -->
 
