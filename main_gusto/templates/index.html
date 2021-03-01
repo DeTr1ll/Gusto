@@ -112,4 +112,32 @@
                 <a class="slider__events__control slider__events__control_next" href="#" role="button"></a>
           </div>
     </section>
+
+    <section id="reservation">
+
+        <div class="container">
+            <div class="row">
+                <form name="sendMessage" id="contactForm" novalidate action="" method="post">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="col-md-6">
+                            {{ form.user_name }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            {{ form.user_email }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            {{ form.message }}
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-lg">Отправить сообщение</button>
+                </form>
+            </div>
+        </div>
+
+    </section>
 {% endblock %}
