@@ -30,7 +30,7 @@
         </div>
     </section>
     <section id="special_menu">
-        <h1>Меню от шефа</h1>
+        <h1 class="h1">Меню от шефа</h1>
         <div class="container">
             <div class="row">
                 {% for item in special_categories %}
@@ -54,7 +54,7 @@
         </div>
     </section>
     <section id="menu">
-        <h1>Меню</h1>
+        <h1 class="h1">Меню</h1>
         <div class="container">
             <div class="row">
                 {% for item in categories %}
@@ -77,11 +77,15 @@
         </div>
     </section>
     <section id="events">
-        <h1>События</h1>
+    <h1 class="h1">Мероприятия</h1>
           <div class="slider__events">
+
             <div class="slider__events__wrapper">
+
                 <div class="slider__events__items">
+
                 {% for item in events %}
+
                    <div class="slider__events__item">
                         <span class="slider__events__item_inner">
                             <span class="slider__events__item_img">
