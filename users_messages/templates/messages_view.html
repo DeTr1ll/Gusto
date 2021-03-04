@@ -3,8 +3,8 @@
 {% block content %}
     {% if 'manager' in user.groups.all.0.name or user.is_staff %}
         <div class="container">
-        <h3>Сообщения от пользователей</h3>
-        <div class="col-md-10 col-md-offset-1 card">
+        <h1 class="h1">Сообщения от пользователей</h1>
+        <div class="col-md-13 col-md-offset-1 card">
             {% for item in items %}
                 <div class="row card-header">
                     <div class="col-md-3">{{ item.user_name }}</div>

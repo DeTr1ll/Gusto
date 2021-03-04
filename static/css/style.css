@@ -388,9 +388,29 @@
         background-color: lightgray;
     }
     .dish-img {
-
+        display: block;
+        width: 60%;
+        margin: 0 auto;
+    }
+    .dish-desc {
+        text-align: center;
         display: inline;
         float: left;
+    }
+    .dish-title {
+        text-align: center;
+        float: top;
+    }
+    .dish-price {
+
+        display: inline;
+
+        font-size: 30px;
+        border-radius: 10px;
+        border: 2px solid ;
+        padding: 2px 2px 2px 2px;
+        float: right;
+        background-color: lawngreen;
     }
     footer{
 
