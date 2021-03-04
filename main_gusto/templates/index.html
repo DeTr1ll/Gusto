@@ -58,14 +58,14 @@
         <div class="container">
             <div class="row">
                 {% for item in categories %}
-                    <div style="width: 100%">
+                    <div style="width: 45%">
                         <h2>{{ item.title }}</h2>
                          {% for dish in item.dishes %}
                              <div class="card bg-secondary">
                              <div class="card-body">
-                                    <img class="card-img-left" src="{{ dish.photo.url }}"></img>
+
                                     <a href="/menu/{{ dish.pk }}" style="text-decoration: none;"><h3 class="card-title">{{ dish.title }}</h3></a>
-                                    <p class="card-desc">{{ dish.description }}</p>
+
                                     <span class="card-price">{{ dish.price }} &#8372</span>
                              </div>
                              </div>
