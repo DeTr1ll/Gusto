@@ -33,7 +33,16 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/#events">Мероприятия</a>
                     </li>
-
+                    {% if 'manager' in user.groups.all.0.name or user.is_staff %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="/users_messages/view">Сообщения</a>
+                    </li>
+                    {% endif %}
+                    {% if user.is_staff %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="/admin">Админ-панель</a>
+                    </li>
+                    {% endif %}
                 </ul>
             </div>
         </div>
