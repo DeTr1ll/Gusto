@@ -14,7 +14,7 @@ def clean(self, *args, **kwargs):
     if username and password:
         user = authenticate(username=username, password=password)
         if (not user) or (not user.check_password(password)):
-            raise forms.ValidationError('Невірний пароль або логін')
+            raise forms.ValidationError('Неверный логин и/или пароль')
     return super().clean(*args, **kwargs)
 
 class UserRegistrationForm(forms.ModelForm):
@@ -29,5 +29,5 @@ class UserRegistrationForm(forms.ModelForm):
     def clean_password2(self, *args, **kwargs):
         data = self.cleaned_data
         if data['password'] != data['password2']:
-            raise forms.ValidationError('Паролі не співпадають')
+            raise forms.ValidationError('Пароли отличаются')
         return data['password2']

@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'main_gusto',
     'menu_gusto',
     'users_messages',
-    'accounts'
+    'accounts',
+    'menu_format'
 ]
 
 MIDDLEWARE = [
