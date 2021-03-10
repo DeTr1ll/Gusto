@@ -30,7 +30,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__fil
 
 # SECURITY WARNING: keep the secret key used in production secret!
 # SECRET_KEY = 'pyhvm-(tkndz9ag!k6=tu%c-=q*y0u3e&mr(_t4ksy9-4^_(wz'
-SECRET_KEY = SECRET_KEY
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
