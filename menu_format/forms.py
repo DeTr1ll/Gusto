@@ -2,13 +2,13 @@ from django import forms
 from main_gusto.models import *
 
 
-
 class BannerForm(forms.ModelForm):
+
     CHOICES = [('True', 'Да'),
                ('False', 'Нет')]
     title = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'type': 'text', 'id': 'title', 'class': 'form-control',
                                                               'placeholder': 'Название', 'required': 'required'}))
-    photo = forms.ImageField(widget=forms.ClearableFileInput( attrs={ 'placeholder': 'Фото', 'class': 'form-control',
+    photo = forms.ImageField(widget=forms.ClearableFileInput(attrs={ 'placeholder': 'Фото', 'class': 'form-control',
                                                                 'required': 'required'}))
     is_visible = forms.ChoiceField(choices=CHOICES, widget=forms.RadioSelect(
                                        attrs={'name': 'visible'}))
@@ -29,9 +29,12 @@ class CategoryForm(forms.ModelForm):
                                        attrs={'name': 'visible'}))
     is_special = forms.ChoiceField(choices=CHOICES, widget=forms.RadioSelect(
                                        attrs={'name': 'special',}))
+
     class Meta():
         model = Category
         fields = ('title', 'category_order', 'is_visible', 'is_special')
+
+
 class DishForm(forms.ModelForm):
 
     categories = Category.objects.order_by('title')
@@ -41,7 +44,6 @@ class DishForm(forms.ModelForm):
 
     CHOICES = [('True', 'Да'),
                 ('False', 'Нет')]
-
 
     title = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'type': 'text', 'id': 'title', 'class': 'form-control',
                                                               'placeholder': 'Название', 'required': 'required'}))
@@ -64,6 +66,7 @@ class DishForm(forms.ModelForm):
         model = Dish
         fields = ('title', 'category', 'description', 'price', 'photo', 'is_visible')
 
+
 class EventForm(forms.ModelForm):
 
     title = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'type': 'text', 'id': 'title', 'class': 'form-control',
@@ -74,6 +77,7 @@ class EventForm(forms.ModelForm):
     event_date = forms.DateInput()
     event_time = forms.TimeInput()
     price = forms.DecimalField()
+
     class Meta():
         model = Events
         fields = ('title', 'photo', 'description', 'event_date', 'event_time', 'price')
