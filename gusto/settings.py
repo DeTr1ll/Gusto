@@ -23,7 +23,7 @@ DB_USER = os.environ.get('DB_USER')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
@@ -71,7 +71,7 @@ ROOT_URLCONF = 'gusto.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates'],
+        'DIRS': os.path.join([BASE_DIR / 'templates']),
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
